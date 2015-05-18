@@ -9,11 +9,16 @@
 
 
 
-Product.find_or_create_by!(name: 'my product') do |p|
-	 p.description = 'my product description'
-	 p.price = '15.00'
-end
+# Product.find_or_create_by!(name: 'my product') do |p|
+# 	 p.description = 'my product description'
+# 	 p.price = '15.00'
+# end
 
+p = Product.find_by(name: "Nike T-Shirt")
+
+if p.blank? 
+	FactoryGirl.create(:product)
+end
 # p = FactoryGirl.create(:product); #unless !p.blank?
 # if !Product.find_by(p)
 # 	p = Product.create(p)
