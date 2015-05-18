@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+
+Product.find_or_create_by!(name: 'my product') do |p|
+	 p.description = 'my product description'
+	 p.price = '15.00'
+end
+
+# p = FactoryGirl.create(:product); #unless !p.blank?
+# if !Product.find_by(p)
+# 	p = Product.create(p)
+# 	p.save
+# end 
+
+
+
+
