@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Alerts' do
 	
-	scenario "notice flash messages should be dismissable", js: true do
+	scenario "notice flash messages should be dismissible", js: true do
 
 		visit '/products/new'
 
@@ -21,7 +21,7 @@ feature 'Alerts' do
 
 	end
 
-	scenario "alert flash messages should be dismissable", js: true do
+	scenario "alert flash messages should be dismissible", js: true do
 
 		visit '/products/new'
 		
