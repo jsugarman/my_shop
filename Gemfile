@@ -28,8 +28,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'capybara'
+  gem 'launchy', '~> 2.4.3'
+  gem 'database_cleaner', '~> 1.4.1'
   gem 'rspec-rails','~> 3.0'
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'factory_girl_rails'
+  gem 'poltergeist', '~> 1.6.0'
 end
 

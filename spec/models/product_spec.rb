@@ -38,8 +38,7 @@ RSpec.describe Product, type: :model do
 		it 'must be 2000 characters or less' do
 			subject.description = "a" * 2001
 			expect(subject.valid?).to eq(false)
-			# puts "errors: " + subject.errors[:description]
-			# expect(subject.errors[:description]).to include('is too long (maximum is 100 characters)')
+			expect(subject.errors[:description]).to include('is too long (maximum is 2000 characters)')
 		end
 
 	end
@@ -53,7 +52,6 @@ RSpec.describe Product, type: :model do
   		it 'must be a number' do
   			subject.price = 'foo'
   			expect(subject.valid?).to eq(false)
-  			puts subject.errors[:price]
   			expect(subject.errors[:price]).to include('is not a number')
   		end
 

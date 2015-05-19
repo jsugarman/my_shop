@@ -3,6 +3,7 @@
 feature "Products" do 
 
 	scenario 'create a new product' do
+
 		visit '/products'
 		expect(page).to have_text('Listing Products')
 
@@ -32,6 +33,7 @@ feature "Products" do
 	end
 
 	scenario 'edit a product successfully' do
+
 		@product = FactoryGirl.create(:product)
 
 		visit '/products'
@@ -40,12 +42,13 @@ feature "Products" do
  		click_link 'Edit', href: "/products/#{@product.id}/edit"
 		fill_in 'Price', with:'20.00'
 
-		click_button 'Update Product'#, href: '/products/#{product.id}/edit'
+		click_button 'Update Product'
 		expect(page).to have_text("Product was successfully updated")
 
 	end
 
 	scenario 'delete a product successfully' do
+
 		@product = FactoryGirl.create(:product)
 
 		visit '/products'
@@ -57,5 +60,4 @@ feature "Products" do
 
 	end
 
-	
 end
