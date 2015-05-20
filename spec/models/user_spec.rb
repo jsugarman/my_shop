@@ -11,6 +11,7 @@ RSpec.describe User, type: :model do
 				expect(new_user.valid?).to eq(false)
 				expect(new_user.errors[:email]).to include("has already been taken")
 			end
+
 		end
 
 	end
