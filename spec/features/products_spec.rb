@@ -1,6 +1,10 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 feature "Products" do 
+
+	background do
+		sign_in_user
+	end
 
 	scenario 'create a new product' do
 

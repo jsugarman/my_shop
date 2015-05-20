@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'Alerts' do
+
+	background do
+		sign_in_user
+	end
 	
 	scenario "notice flash messages should be dismissible", js: true do
 
