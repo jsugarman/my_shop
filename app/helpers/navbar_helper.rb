@@ -1,6 +1,5 @@
 module NavbarHelper
 
-
 	class NavbarBuilder
 
 		attr_reader :t
@@ -43,7 +42,5 @@ module NavbarHelper
 			yield builder
 		end
 	end
-
-
 
 end
