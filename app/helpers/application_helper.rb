@@ -38,4 +38,17 @@ module ApplicationHelper
 
   end
 
+  # override translate for yml manipulate in view
+  def translate(field)
+    super("#{@_i18n_scope}.#{field}")
+  end
+  alias_method :t, :translate
+
+  def with_i18n_scope(scope,&block)
+    old_i18n_scope, @_i18n_scope = @_i18n_scope, scope
+    yield
+  ensure
+    @_i18n_scope = old_i18n_scope
+  end
+
 end
