@@ -1,6 +1,5 @@
 module NavbarHelper
 
-
 	class NavbarBuilder
 
 		attr_reader :t
@@ -14,14 +13,15 @@ module NavbarHelper
 		end
 
 		def navbar_tag(options = {}, &block)
-			t.content_tag(:ul, { class: 'nav navbar-nav' }.merge(options) ) do
+			classes = "nav navbar-nav #{options.delete(:class)}".strip
+			t.content_tag(:ul, { class: classes }.merge(options) ) do
 				yield self
 			end
 		end	
 
-		def navbar_item_tag(content, url, options = {})
-			t.content_tag(:li, navbar_item_attrs(url).merge(options) ) do
-				t.link_to(content, url)
+		def navbar_item_tag(content, url, link_options = {})
+			t.content_tag(:li, navbar_item_attrs(url) ) do
+				t.link_to(content, url, link_options)
 			end
 
 		end
@@ -43,7 +43,5 @@ module NavbarHelper
 			yield builder
 		end
 	end
-
-
 
 end
